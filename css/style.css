@@ -1,0 +1,232 @@
+/* Global */
+/* Plain */
+/* Panel */
+/* Menu */
+/* Command */
+/* Result */
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #EEEEEE;
+  color: #222222;
+  font-family: "Helvetica", Arial, sans-serif;
+  margin: 0;
+  height: 100vh; }
+
+.hidden {
+  display: none; }
+
+/* Page Layout */
+.panel {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  height: 100vh;
+  transition: margin-left 0.5s ease, width 0.5s ease; }
+
+.panel--1 {
+  width: 10%; }
+
+.panel--1--hidden--to-left {
+  margin-left: -10%; }
+
+.panel--zIndex-1 {
+  z-index: 1; }
+
+.panel--2 {
+  width: 20%; }
+
+.panel--2--hidden--to-left {
+  margin-left: -20%; }
+
+.panel--zIndex-2 {
+  z-index: 2; }
+
+.panel--3 {
+  width: 30%; }
+
+.panel--3--hidden--to-left {
+  margin-left: -30%; }
+
+.panel--zIndex-3 {
+  z-index: 3; }
+
+.panel--4 {
+  width: 40%; }
+
+.panel--4--hidden--to-left {
+  margin-left: -40%; }
+
+.panel--zIndex-4 {
+  z-index: 4; }
+
+.panel--5 {
+  width: 50%; }
+
+.panel--5--hidden--to-left {
+  margin-left: -50%; }
+
+.panel--zIndex-5 {
+  z-index: 5; }
+
+.panel--6 {
+  width: 60%; }
+
+.panel--6--hidden--to-left {
+  margin-left: -60%; }
+
+.panel--zIndex-6 {
+  z-index: 6; }
+
+.panel--7 {
+  width: 70%; }
+
+.panel--7--hidden--to-left {
+  margin-left: -70%; }
+
+.panel--zIndex-7 {
+  z-index: 7; }
+
+.panel--8 {
+  width: 80%; }
+
+.panel--8--hidden--to-left {
+  margin-left: -80%; }
+
+.panel--zIndex-8 {
+  z-index: 8; }
+
+.panel--9 {
+  width: 90%; }
+
+.panel--9--hidden--to-left {
+  margin-left: -90%; }
+
+.panel--zIndex-9 {
+  z-index: 9; }
+
+.panel--10 {
+  width: 100%; }
+
+.panel--10--hidden--to-left {
+  margin-left: -100%; }
+
+.panel--zIndex-10 {
+  z-index: 10; }
+
+.panel--scroll-x {
+  overflow-x: auto; }
+
+.panel--scroll-y {
+  overflow-y: auto; }
+
+/* Menu */
+.menu {
+  position: relative;
+  background: #333333;
+  color: #EEEEEE;
+  height: 100vh; }
+
+.menu__header h2 {
+  margin: 0;
+  padding: 10px;
+  text-align: center; }
+
+.menu__toggle-button {
+  background: #333333;
+  color: #EEEEEE;
+  font-size: 1.2em;
+  border: none;
+  padding: 5px 10px 10px;
+  cursor: pointer;
+  /* Positionning */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: right 0.5s ease, bottom 0.5s ease; }
+
+.menu__toggle-button__label {
+  font-size: 0.83em;
+  padding: 5px; }
+
+/* Positionning the menu button when the menu panel is hidden */
+.panel--hidden .menu__toggle-button {
+  right: -40px; }
+
+/* Form */
+.form {
+  display: table;
+  width: 100%; }
+
+.form__group {
+  display: table-row; }
+
+.form__group__label, .form__group__input {
+  display: table-cell;
+  height: 100%; }
+
+.form__group__input input {
+  height: 100%;
+  width: 100%; }
+
+/* Command of the app */
+.command {
+  height: 50px;
+  background-color: #FFFFFF;
+  color: #999999;
+  border-bottom: 1px solid #CCCCCC; }
+
+.command__input {
+  height: 49px; }
+
+.command__input .form__group__label {
+  padding: 10px;
+  width: 5%;
+  text-align: center; }
+
+.command__input input {
+  border: none;
+  border-left: 1px solid #CCCCCC;
+  padding: 5px 10px; }
+
+/* Result */
+.result {
+  margin: 10px;
+  display: table;
+  width: calc(100% - 20px); }
+
+.result__command, .result__result {
+  display: table-row; }
+
+.result__command__label, .result__result__label {
+  display: table-cell;
+  width: 5%;
+  padding: 10px;
+  text-align: right; }
+
+.result__command__value, .result__result__value {
+  display: table-cell;
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  border: 1px solid #CCCCCC; }
+
+.result__command__value {
+  color: #999999;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+
+.result__result__value {
+  color: #222222;
+  border-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
+.result__command {
+  color: #999999;
+  border-bottom: 1px solid #CCCCCC; }
+
+.result__result__label {
+  color: #999999; }
+
+/*# sourceMappingURL=style.css.map */

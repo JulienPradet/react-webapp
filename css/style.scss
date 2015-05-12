@@ -1,0 +1,201 @@
+/* Global */
+$font-style: "Helvetica", Arial, sans-serif;
+
+/* Plain */
+$background: #EEEEEE;
+$color: #222222;
+
+/* Panel */
+$panel-background: #EEEEEE;
+$panel-color: #222222;
+
+/* Menu */
+$menu-background: #333333;
+$menu-color: #EEEEEE;
+
+/* Command */
+$command-background: #FFFFFF;
+$command-color: #999999;
+$command-border: #CCCCCC;
+$command-height: 50px;
+
+/* Result */
+$result-background: #FFFFFF;
+$result-color: $color;
+$result-border: #CCCCCC;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $background;
+	color: $color;
+	font-family: $font-style;
+	margin: 0;
+	height: 100vh;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Page Layout */
+.panel {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 100vh;
+	transition: margin-left 0.5s ease, width 0.5s ease;
+}
+
+@for $i from 1 through 10 {
+	.panel--#{$i} {
+		width: $i * 10%;
+	}
+
+	.panel--#{$i}--hidden--to-left {
+		margin-left: - $i * 10%;
+	}
+
+	.panel--zIndex-#{$i} {
+		z-index: $i;
+	}
+}
+
+.panel--scroll-x {
+	overflow-x: auto;
+}
+.panel--scroll-y {
+	overflow-y: auto;
+}
+
+/* Menu */
+.menu {
+	position: relative;
+	background: $menu-background;
+	color: $menu-color;
+	height: 100vh;
+}
+
+.menu__header h2 {
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+}
+
+.menu__toggle-button {
+	background: $menu-background;
+	color: $menu-color;
+	font-size: 1.2em;
+	border: none;
+	padding: 5px 10px 10px;
+	cursor: pointer;
+
+	/* Positionning */
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transition: right 0.5s ease, bottom 0.5s ease;
+}
+
+.menu__toggle-button__label {
+	font-size: 0.83em;
+	padding: 5px;
+}
+
+/* Positionning the menu button when the menu panel is hidden */
+.panel--hidden .menu__toggle-button {
+	right: -40px;
+}
+
+/* Form */
+.form {
+	display: table;
+	width: 100%;
+}
+
+.form__group {
+	display: table-row;
+}
+
+.form__group__label, .form__group__input {
+	display: table-cell;
+	height: 100%;
+}
+
+.form__group__input input {
+	height: 100%;
+	width: 100%;
+}
+
+/* Command of the app */
+.command {
+	height: $command-height;
+	background-color: $command-background;
+	color: $command-color;
+	border-bottom: 1px solid $command-border;
+}
+
+.command__input {
+	height: $command-height - 1px;
+}
+
+.command__input .form__group__label {
+	padding: 10px;
+	width: 5%;
+	text-align: center;
+}
+
+.command__input input {
+	border: none;
+	border-left: 1px solid $command-border;
+	padding: 5px 10px;
+}
+
+/* Result */
+.result {
+	margin: 10px;
+	display: table;
+	width: calc(100% - 20px);
+}
+
+.result__command, .result__result {
+	display: table-row;
+}
+
+.result__command__label, .result__result__label {
+	display: table-cell;
+	width: 5%;
+	padding: 10px;
+	text-align: right;
+}
+
+.result__command__value, .result__result__value {
+	display: table-cell;
+	background-color: $result-background;
+	padding: 10px 20px;
+	border: 1px solid $result-border;
+}
+
+.result__command__value {
+	color: $command-color;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.result__result__value {
+	color: $result-color;
+	border-top: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.result__command {
+	color: $command-color;
+	border-bottom: 1px solid $result-border;
+}
+
+.result__result__label {
+	color: $command-color;
+}
